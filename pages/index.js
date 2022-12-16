@@ -140,7 +140,7 @@ const JobComponent = ({ setUserInputJob }) => {
         </div>
         <div
           className="button"
-          onClick={() => setUserInputJob("un astronaute aventurier")}
+          onClick={() => setUserInputJob("un cosmonaute")}
         >
           <Image className="button-image" src={astronaut} alt="astronaute" />
         </div>
@@ -314,11 +314,11 @@ function Home() {
     <div className="root">
       <div className="container">
         <Head>
-          <title>I-ya-gi - Generateur d&apos;histoires</title>
+          <title>iyagi - Generateur d&apos;histoires</title>
         </Head>
         <div className="header">
           <div className="header-title">
-            <h1>I-ya-gi</h1>
+            <h1>iyagi</h1>
           </div>
           <div className="reload" onClick={resetValues}>
             <p>Créer une nouvelle histoire</p>
@@ -387,6 +387,12 @@ function Home() {
           </div>
         </div>
       </div>
+      <footer>
+        <p>
+          Made by{" "}
+          <a href="https://www.linkedin.com/in/maudfrichement/">@MaudFri</a>
+        </p>
+      </footer>
     </div>
   );
 }

@@ -1,9 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gaegu:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap");
 
 body {
   margin: 0;
   padding: 0;
-  font-family: "Manrope", sans-serif;
+  font-family: "lexend", sans-serif;
   background-color: #f7efea;
 }
 
@@ -44,12 +46,17 @@ body {
 .header-title h1 {
   width: 100%;
   font-weight: 700;
-  font-size: 20px;
-  letter-spacing: 0px;
+  font-size: 30px;
   line-height: 1.2em;
   text-align: center;
   margin: 0;
-  margin-left: 10vw;
+  margin-left: 5vw;
+  font-family: "Gaegu", cursive;
+  letter-spacing: 10%;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 0.2em;
+  text-align: left;
 }
 
 .header .reload {
@@ -59,10 +66,10 @@ body {
   width: fit-content;
   padding-right: 5px;
   padding-left: 5px;
-  background: #ffffff;
+  background: white;
   font-family: inherit;
   font-weight: 900;
-  border: 3px solid #eec5c8;
+  border: 3px solid white;
   border-radius: 0.8em;
   box-shadow: 0.1em 0.1em;
   color: #eec5c8;
@@ -187,11 +194,11 @@ textarea {
   font-size: 18px;
   border: 3px solid #eec5c8;
   border-radius: 0.4em;
-  box-shadow: 0.1em 0.1em;
+  box-shadow: 0.1em 0.1em #eec5c8;
   padding: 1rem;
   transition: 0.3;
   width: 80%;
-  color: #eec5c8;
+  color: #d6575f;
 }
 
 textarea:focus-visible {
@@ -211,13 +218,12 @@ textarea:focus {
   justify-content: center;
   align-items: center;
   background: #ffffff;
-  font-family: inherit;
   font-weight: 900;
   border: 3px solid #eec5c8;
   border-radius: 0.4em;
   box-shadow: 0.1em 0.1em;
   color: #eec5c8;
-  font-size: 38px;
+  font-size: 30px;
   width: 12vw;
   height: 12vw;
   margin: 10px;
@@ -225,6 +231,9 @@ textarea:focus {
   text-align: center;
   min-width: 150px;
   min-height: 150px;
+  font-family: inherit;
+  font-weight: 700;
+  padding: 5px;
 }
 
 .button p {
@@ -398,7 +407,7 @@ textarea:focus {
 }
 
 .output-header h3 {
-  font-family: "Manrope", serif;
+  font-family: "lexend", serif;
   font-size: 28px;
   font-style: normal;
   font-weight: 800;
@@ -438,6 +447,34 @@ textarea:focus {
   padding: 10px;
   margin-bottom: 10vh;
   min-height: 0;
+}
+
+footer {
+  z-index: 10;
+  position: sticky;
+  top: 98vh;
+  overflow: hidden;
+  width: 100vw;
+  text-align: center;
+  border-radius: 5px;
+}
+
+footer p {
+  text-align: center;
+  background-color: rgb(238, 197, 200, 0.9);
+  border-radius: 5px;
+  width: fit-content;
+  margin: auto;
+  margin-bottom: 10px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #ffffff;
+  font-size: x-small;
+}
+
+footer a {
+  color: #ffffff;
 }
 
 @media (min-width: 810px) and (max-width: 1199px) {
