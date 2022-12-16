@@ -140,29 +140,30 @@ function Home() {
             <h2>Génerez une histoire personnalisée avec votre enfant !</h2>
             <h3>Clique sur les boutons pour définir tous les paramètres de ton histoire.</h3>
           </div>
-
-          <label>Quel age as tu?</label>
-          <div className="buttons">
-            <div
-              className="button"
-              value="moins de 3 ans"
-              onClick={onUserChangedAge}
-            >
-              <p>- 3 ans</p>
-            </div>
-            <div
-              className="button"
-              value="entre 5 et 8 ans"
-              onClick={onUserChangedAge}
-            >
-              <p>3 - 5 ans</p>
-            </div>
-            <div
-              className="button"
-              value="entre 8 et 12 ans"
-              onClick={onUserChangedAge}
-            >
-              <p>5 - 8 ans</p>
+          <div className='questions'>
+            <label>Quel age as tu?</label>
+            <div className="buttons">
+              <div
+                className="button"
+                value="moins de 3 ans"
+                onClick={onUserChangedAge}
+              >
+                <p>- 3 ans</p>
+              </div>
+              <div
+                className="button"
+                value="entre 5 et 8 ans"
+                onClick={onUserChangedAge}
+              >
+                <p>3 - 5 ans</p>
+              </div>
+              <div
+                className="button"
+                value="entre 8 et 12 ans"
+                onClick={onUserChangedAge}
+              >
+                <p>5 - 8 ans</p>
+              </div>
             </div>
           </div>
         </div>

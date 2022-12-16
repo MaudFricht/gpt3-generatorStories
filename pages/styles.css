@@ -27,7 +27,7 @@ body {
     align-items: center;
     color: rgb(0, 0, 0);
     justify-content: space-between;
-    z-index: 5;
+    z-index: 10;
     position: fixed;
     left: 0;
     height: 8vh;
@@ -80,6 +80,8 @@ body {
 }
 
 .rules {
+    width: 80vw;
+    top: 9vh;
     font-size: 1rem;
     background-color: #eec5c8;
     border-radius: 10px;
@@ -88,10 +90,18 @@ body {
     padding-right: 30px;
     margin-top: -10vh;
     color: #D6575F;
+    text-align: center;
 }
 
 h3 {
     color: #ffffff;
+}
+
+.questions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
 }
 
 /** PAGES POSITIONS */
@@ -151,7 +161,7 @@ h3 {
 .section {
     display: flex;
     flex-direction: column;
-    align-content: space-around;
+    align-content: center;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
@@ -325,6 +335,7 @@ textarea:focus {
     width: 30%;
     text-align: center;
     color: #D6575F;
+    cursor: pointer;
     
 }
 
@@ -430,8 +441,8 @@ textarea:focus {
     font-size: 1.3rem;
     text-align: center;
     white-space: pre-line;
-    color: rgba(0, 0, 0);
-    line-height: 2.4rem;
+    color: rgb(24, 24, 24);
+    line-height: 2.2rem;
     text-align: justify;
 }
 
@@ -441,6 +452,7 @@ textarea:focus {
     font-size: 1.3rem;
     padding: 10px;
     margin-bottom: 10vh;
+    min-height: 0;
 }
 
 @media (min-width: 810px) and (max-width: 1199px) {
@@ -448,11 +460,41 @@ textarea:focus {
 }
 
 @media (max-width: 809px) {
- 
+    
+    .questions {
+        display: flex;
+        flex-direction: column;
+    }
+    .rules {
+    margin-top: 0;
+    width: 80%;
+  
+    font-size: 0.7rem;
+    padding: 10px;
+    }
+
+    .button.restart {
+        width: 70%;
+        height: fit-content;
+        min-height: 0%;
+    }
+
 }
 
 @media (max-width: 600px) {
     
+    .button {
+        min-width: 100px;
+        min-height: 100px;
+    }
+
+    .button p {
+        font-size: 1.2rem;
+    }
+
+    .output-content p {
+        font-size: 1.1rem;
+    }
 }
 
 
