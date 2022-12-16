@@ -28,8 +28,36 @@ import ma from '../assets/sword.png';
 import eighties from '../assets/dance-floor.png';
 import whenever from '../assets/question-mark.png';
 
+const AgeComponent = ({setUserInputAge}) => {
+  return (        
+  <div className='questions'>
+  <label>Quel age as tu?</label>
+  <div className="buttons">
+    <div
+      className="button"
+      onClick={() => setUserInputAge("moins de 3 ans")}
+    >
+      <p>- 3 ans</p>
+    </div>
+    <div
+      className="button"
+      onClick={() => setUserInputAge("entre 5 et 8 ans")}
+    >
+      <p>3 - 5 ans</p>
+    </div>
+    <div
+      className="button"
+      onClick={() => setUserInputAge("entre 8 et 12 ans")}
+    >
+      <p>5 - 8 ans</p>
+    </div>
+  </div>
+</div>
+)
+}
+
 function Home() {
-  const [userInputAge, setUserInputAge] = useState('');
+  const [userInputAge, setUserInputAge] = useState(null);
   const [userInputName, setUserInputName] = useState('');
   const [userInputSexe, setUserInputSexe] = useState('');
   const [userInputJob, setUserInputJob] = useState('');
@@ -70,11 +98,6 @@ function Home() {
     setIsGenerated(true);
   };
 
-  const onUserChangedAge = (event) => {
-    console.log(event.target.value);
-    setUserInputAge(event.target.value);
-    setAgeIsClicked(true);
-  };
 
   const onUserChangedName = (event) => {
     setUserInputName(event.target.value);
@@ -140,33 +163,13 @@ function Home() {
             <h2>Génerez une histoire personnalisée avec votre enfant !</h2>
             <h3>Clique sur les boutons pour définir tous les paramètres de ton histoire.</h3>
           </div>
-          <div className='questions'>
-            <label>Quel age as tu?</label>
-            <div className="buttons">
-              <div
-                className="button"
-                value="moins de 3 ans"
-                onClick={onUserChangedAge}
-              >
-                <p>- 3 ans</p>
-              </div>
-              <div
-                className="button"
-                value="entre 5 et 8 ans"
-                onClick={onUserChangedAge}
-              >
-                <p>3 - 5 ans</p>
-              </div>
-              <div
-                className="button"
-                value="entre 8 et 12 ans"
-                onClick={onUserChangedAge}
-              >
-                <p>5 - 8 ans</p>
-              </div>
-            </div>
-          </div>
+
         </div>
+
+        {!userInputAge && (
+          <AgeComponent setUserInputAge={setUserInputAge} />
+        )}
+
 
         {/* Set character parameters */}
         <div className="page section sexe" style={{ display: sexeIsClicked ? 'none' : '' }}>
@@ -176,7 +179,7 @@ function Home() {
             <div
               className="button"
               value="Feminin"
-              onClick={onUserChangedSexe}
+              onClick={() => onUserChangedSexe("feminin")}
             >
               <Image className="button-image" src={girl} alt="fille" />
             </div>
