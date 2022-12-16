@@ -464,6 +464,11 @@ textarea:focus {
 }
 
 @media (max-width: 600px) {
+  .questions {
+    display: flex;
+    flex-direction: column;
+  }
+
   .button {
     min-width: 100px;
     min-height: 100px;
@@ -475,6 +480,10 @@ textarea:focus {
 
   .output-content p {
     font-size: 1.1rem;
+  }
+
+  .page {
+    gap: 3%;
   }
 }
 

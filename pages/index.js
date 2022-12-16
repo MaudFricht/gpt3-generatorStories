@@ -27,6 +27,28 @@ import egypt from "../assets/pyramids.png";
 import ma from "../assets/sword.png";
 import eighties from "../assets/dance-floor.png";
 import whenever from "../assets/question-mark.png";
+/* 
+import {
+  girl,
+  boy,
+  castle,
+  crown,
+  magic,
+  robot,
+  animal,
+  dino,
+  astronaut,
+  knight,
+  city,
+  forest,
+  sea,
+  mountain,
+  space,
+  egypt,
+  ma,
+  eighties,
+  whenever,
+} from "../assets"; */
 
 const AgeComponent = ({ setUserInputAge }) => {
   return (
@@ -49,15 +71,15 @@ const AgeComponent = ({ setUserInputAge }) => {
           </div>
           <div
             className="button"
-            onClick={() => setUserInputAge("entre 5 et 8 ans")}
+            onClick={() => setUserInputAge("entre 3 et 4 ans")}
           >
-            <p>3 - 5 ans</p>
+            <p>3 - 4 ans</p>
           </div>
           <div
             className="button"
-            onClick={() => setUserInputAge("entre 8 et 12 ans")}
+            onClick={() => setUserInputAge("entre 5 et 6 ans")}
           >
-            <p>5 - 8 ans</p>
+            <p>5 - 6 ans</p>
           </div>
         </div>
       </div>
@@ -118,7 +140,7 @@ const JobComponent = ({ setUserInputJob }) => {
         </div>
         <div
           className="button"
-          onClick={() => setUserInputJob("un austronaute aventurier")}
+          onClick={() => setUserInputJob("un astronaute aventurier")}
         >
           <Image className="button-image" src={astronaut} alt="astronaute" />
         </div>
@@ -188,7 +210,7 @@ const AreaComponent = ({ setUserInputArea }) => {
           <Image
             className="button-image"
             src={dino}
-            alt="Epoque des dinosaures"
+            alt="epoque des dinosaures"
           />
         </div>
         <div
