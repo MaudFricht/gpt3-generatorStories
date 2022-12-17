@@ -33,8 +33,6 @@ body {
   position: fixed;
   left: 0;
   height: 8vh;
-  background: #d6575f;
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
   color: rgb(255, 255, 255);
 }
 
@@ -57,6 +55,7 @@ body {
   line-height: 40px;
   letter-spacing: 0.2em;
   text-align: left;
+  color: #d6575f;
 }
 
 .header .reload {
@@ -64,14 +63,14 @@ body {
   align-items: center;
   height: 50%;
   width: fit-content;
-  padding-right: 5px;
-  padding-left: 5px;
+  padding: 3px;
+  padding-right: 8px;
+  padding-left: 8px;
   background: white;
   font-family: inherit;
   font-weight: 900;
-  border: 3px solid white;
+  border: solid 3px #ffffff;
   border-radius: 0.8em;
-  box-shadow: 0.1em 0.1em;
   color: #eec5c8;
   font-size: 12px;
   margin: 10px;
@@ -83,6 +82,11 @@ body {
 
 .reload p {
   color: #d6575f;
+}
+
+.reload:hover {
+  background-color: rgb(247, 239, 234, 0.6);
+  transition: ease-in 0.2s;
 }
 
 .rules {

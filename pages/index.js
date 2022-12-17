@@ -67,7 +67,7 @@ const AgeComponent = ({ setUserInputAge }) => {
             className="button"
             onClick={() => setUserInputAge("moins de 3 ans")}
           >
-            <p>- 3 ans</p>
+            <p>- de 3 ans</p>
           </div>
           <div
             className="button"
@@ -158,7 +158,7 @@ const JobComponent = ({ setUserInputJob }) => {
 const ContextComponent = ({ setUserInputContext }) => {
   return (
     <div className="page context">
-      <p className="label">Où se passe ton histoire ?</p>
+      <p className="label">Où se situe ton histoire ?</p>
       <div className="buttons">
         <div
           className="button"
@@ -201,7 +201,7 @@ const ContextComponent = ({ setUserInputContext }) => {
 const AreaComponent = ({ setUserInputArea }) => {
   return (
     <div className="page area">
-      <p className="label">Quand est ce que cela à lieu ?</p>
+      <p className="label">A quelle époque ?</p>
       <div className="buttons">
         <div
           className="button"
@@ -215,13 +215,13 @@ const AreaComponent = ({ setUserInputArea }) => {
         </div>
         <div
           className="button"
-          onClick={() => setUserInputArea("en egypte antique")}
+          onClick={() => setUserInputArea("en égypte antique")}
         >
           <Image className="button-image" src={egypt} alt="Egypte antique" />
         </div>
         <div
           className="button"
-          onClick={() => setUserInputArea("au moyen age")}
+          onClick={() => setUserInputArea("au moyen-age")}
         >
           <Image className="button-image" src={ma} alt="Moyen Age" />
         </div>
@@ -339,7 +339,7 @@ function Home() {
           className="page section perso name"
           style={{ display: isGenerated ? "none" : "" }}
         >
-          <p className="label">Le personnage s&apos;appelle </p>
+          <p className="label">Mon personnage s&apos;appelle </p>
           <textarea
             className="text-name"
             placeholder="Choisi le nom de ton personnage."
@@ -364,7 +364,7 @@ function Home() {
             </a>
           </div>
         </div>
-        ;{/* OUTPUT */}
+        {/* OUTPUT */}
         <div
           className="page result"
           style={{ display: isGenerated ? "" : "none" }}
@@ -390,7 +390,9 @@ function Home() {
       <footer>
         <p>
           Made by{" "}
-          <a href="https://www.linkedin.com/in/maudfrichement/">@MaudFri</a>
+          <a href="https://www.linkedin.com/in/maudfrichement/">
+            @MaudFri with Gpt-3
+          </a>
         </p>
       </footer>
     </div>
