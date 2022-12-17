@@ -117,6 +117,10 @@ h3 {
 /** PAGES POSITIONS */
 
 .page.age {
+  z-index: 9;
+}
+
+.page.type {
   z-index: 8;
 }
 
@@ -441,7 +445,7 @@ textarea:focus {
   white-space: pre-line;
   color: rgb(24, 24, 24);
   line-height: 2.2rem;
-  text-align: justify;
+  text-align: left;
 }
 
 .button.restart {
@@ -525,6 +529,10 @@ footer a {
 
   .page {
     gap: 3%;
+  }
+
+  p.label {
+    text-align: center;
   }
 }
 

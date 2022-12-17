@@ -23,10 +23,14 @@ import forest from "../assets/forest.png";
 import sea from "../assets/seaweed.png";
 import mountain from "../assets/mountain.png";
 import space from "../assets/planet.png";
-import egypt from "../assets/pyramids.png";
-import ma from "../assets/sword.png";
-import eighties from "../assets/dance-floor.png";
-import whenever from "../assets/question-mark.png";
+import moon from "../assets/moon.png";
+import sun from "../assets/sun.png";
+import adventure from "../assets/adventure.png";
+import war from "../assets/war.png";
+import parents from "../assets/parents.png";
+import friends from "../assets/friend.png";
+import love from "../assets/heart.png";
+
 /* 
 import {
   girl,
@@ -201,50 +205,71 @@ const ContextComponent = ({ setUserInputContext }) => {
 const AreaComponent = ({ setUserInputArea }) => {
   return (
     <div className="page area">
-      <p className="label">A quelle époque ?</p>
+      <p className="label">Quand mon histoire se déroule t-elle&nbsp;? </p>
       <div className="buttons">
         <div
           className="button"
-          onClick={() => setUserInputArea("à l'époque des dinosaures")}
+          onClick={() => setUserInputArea("lors d'une journée ensoleillée")}
+        >
+          <Image className="button-image" src={sun} alt="Journée" />
+        </div>
+        <div
+          className="button"
+          onClick={() => setUserInputArea("durant la nuit")}
+        >
+          <Image className="button-image" src={moon} alt="Nuit" />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const StoryTypeComponent = ({ setUserInputType }) => {
+  return (
+    <div className="page type">
+      <p className="label">Quel type d'histoire je souhaite écrire ? </p>
+      <div className="buttons">
+        <div className="button" onClick={() => setUserInputType("d'amour")}>
+          <Image className="button-image" src={love} alt="Histoire d'amour" />
+        </div>
+        <div
+          className="button"
+          onClick={() =>
+            setUserInputType("avec une bataille contre un méchant")
+          }
+        >
+          <Image className="button-image" src={war} alt="Une grande bataille" />
+        </div>
+        <div
+          className="button"
+          onClick={() => setUserInputType("d'une famille aimante")}
         >
           <Image
             className="button-image"
-            src={dino}
-            alt="epoque des dinosaures"
+            src={parents}
+            alt="Histoire de famille"
           />
         </div>
         <div
           className="button"
-          onClick={() => setUserInputArea("en égypte antique")}
+          onClick={() => setUserInputType("d'amitié profonde et sincère")}
         >
-          <Image className="button-image" src={egypt} alt="Egypte antique" />
-        </div>
-        <div
-          className="button"
-          onClick={() => setUserInputArea("au moyen-age")}
-        >
-          <Image className="button-image" src={ma} alt="Moyen Age" />
-        </div>
-        <div
-          className="button"
-          onClick={() =>
-            setUserInputArea(
-              "dans les années 80 avec des hippies et de la musique disco"
-            )
-          }
-        >
-          <Image className="button-image" src={eighties} alt="Années 80" />
+          <Image
+            className="button-image"
+            src={friends}
+            alt="Histoire d'amitié"
+          />
         </div>
         <div
           className="button"
           onClick={() =>
-            setUserInputArea("à un moment important de l'histoire")
+            setUserInputType("d'aventure et de découverte d'un monde")
           }
         >
           <Image
             className="button-image"
-            src={whenever}
-            alt="N'importe quand"
+            src={adventure}
+            alt="Histoire d'aventure"
           />
         </div>
       </div>
@@ -254,11 +279,12 @@ const AreaComponent = ({ setUserInputArea }) => {
 
 function Home() {
   const [userInputAge, setUserInputAge] = useState(null);
-  const [userInputName, setUserInputName] = useState(null);
+  const [userInputName, setUserInputName] = useState("");
   const [userInputGender, setUserInputGender] = useState(null);
   const [userInputJob, setUserInputJob] = useState(null);
   const [userInputContext, setUserInputContext] = useState(null);
   const [userInputArea, setUserInputArea] = useState(null);
+  const [userInputType, setUserInputType] = useState(null);
 
   const [apiOutput, setApiOutput] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
@@ -277,6 +303,7 @@ function Home() {
         userInputAge,
         userInputJob,
         userInputName,
+        userInputType,
         userInputGender,
         userInputContext,
         userInputArea,
@@ -303,6 +330,7 @@ function Home() {
     setUserInputGender(null);
     setUserInputAge(null);
     setUserInputArea(null);
+    setUserInputType(null);
     setUserInputContext(null);
     setUserInputJob(null);
     setUserInputName("");
@@ -325,6 +353,9 @@ function Home() {
           </div>
         </div>
         {!userInputAge && <AgeComponent setUserInputAge={setUserInputAge} />}
+        {!userInputType && (
+          <StoryTypeComponent setUserInputType={setUserInputType} />
+        )}
         {!userInputGender && (
           <GenderComponent setUserInputGender={setUserInputGender} />
         )}

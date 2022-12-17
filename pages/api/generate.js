@@ -12,7 +12,7 @@ const generateAction = async (req, res) => {
     Age du lecteur: ${req.body.userInputAge}
     Paramètres de l'histoire:
     Personnage : Le personnage de l'histoire s'appelle ${req.body.userInputName}. Il est de sexe ${req.body.userInputGender}. C'est ${req.body.userInputJob}.
-    Contexte : L'histoire se passe ${req.body.userInputContext} ${req.body.userInputArea}
+    Contexte : C'est une histoire ${req.body.userInputType}. L'histoire se passe ${req.body.userInputContext} ${req.body.userInputArea}
     Histoire :
     `;
 
