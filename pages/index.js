@@ -328,7 +328,6 @@ function Home() {
   const resetValues = () => {
     setUserInputGender(null);
     setUserInputAge(null);
-    setUserInputArea(null);
     setUserInputType(null);
     setUserInputContext(null);
     setUserInputJob(null);
