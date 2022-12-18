@@ -7,6 +7,9 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
+import * as React from "react";
 
 import girl from "../assets/girl.png";
 import boy from "../assets/boy.png";
@@ -30,6 +33,7 @@ import war from "../assets/war.png";
 import parents from "../assets/parents.png";
 import friends from "../assets/friend.png";
 import love from "../assets/heart.png";
+import logo from "../assets/logo.png";
 
 /* 
 import {
@@ -57,15 +61,8 @@ import {
 const AgeComponent = ({ setUserInputAge }) => {
   return (
     <div className="page section age">
-      <div className="rules">
-        <h2>Génerez une histoire personnalisée avec votre enfant !</h2>
-        <h3>
-          Clique sur les boutons pour définir tous les paramètres de ton
-          histoire.
-        </h3>
-      </div>
       <div className="questions">
-        <p className="label">Quel age as tu?</p>
+        <p className="label">Vous souhaitez une histoire pour un enfant de</p>
         <div className="buttons">
           <div
             className="button"
@@ -94,7 +91,7 @@ const AgeComponent = ({ setUserInputAge }) => {
 const GenderComponent = ({ setUserInputGender }) => {
   return (
     <div className="page section sexe">
-      <h2 className="rules">Choisi ton personnage !</h2>
+      {/*<h2 className="rules">Choisi ton personnage&nbsp;!</h2>*/}
       <p className="label">Ton personnage est</p>
       <div className="buttons">
         <div
@@ -119,7 +116,7 @@ const GenderComponent = ({ setUserInputGender }) => {
 const JobComponent = ({ setUserInputJob }) => {
   return (
     <div className="page job">
-      <p className="label">Qui est ton personnage?</p>
+      <p className="label">C'est un</p>
       <div className="buttons">
         <div
           className="button"
@@ -162,7 +159,7 @@ const JobComponent = ({ setUserInputJob }) => {
 const ContextComponent = ({ setUserInputContext }) => {
   return (
     <div className="page context">
-      <p className="label">Où se situe ton histoire ?</p>
+      <p className="label">Ton histoire se situe</p>
       <div className="buttons">
         <div
           className="button"
@@ -205,7 +202,7 @@ const ContextComponent = ({ setUserInputContext }) => {
 const AreaComponent = ({ setUserInputArea }) => {
   return (
     <div className="page area">
-      <p className="label">Quand mon histoire se déroule t-elle&nbsp;? </p>
+      <p className="label">Le moment de la journée est</p>
       <div className="buttons">
         <div
           className="button"
@@ -227,9 +224,9 @@ const AreaComponent = ({ setUserInputArea }) => {
 const StoryTypeComponent = ({ setUserInputType }) => {
   return (
     <div className="page type">
-      <p className="label">Quel type d'histoire je souhaite écrire ? </p>
+      <p className="label">Quel type d'histoire souhaites tu écrire&nbsp;? </p>
       <div className="buttons">
-        <div className="button" onClick={() => setUserInputType("d'amour")}>
+        <div className="button" onClick={() => setUserInputType("d'amour pur")}>
           <Image className="button-image" src={love} alt="Histoire d'amour" />
         </div>
         <div
@@ -283,12 +280,15 @@ function Home() {
   const [userInputGender, setUserInputGender] = useState(null);
   const [userInputJob, setUserInputJob] = useState(null);
   const [userInputContext, setUserInputContext] = useState(null);
-  const [userInputArea, setUserInputArea] = useState(null);
   const [userInputType, setUserInputType] = useState(null);
 
   const [apiOutput, setApiOutput] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
   const [isGenerated, setIsGenerated] = useState(false);
+
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   const callGenerateEndpoint = async () => {
     setIsGenerating(true);
@@ -306,7 +306,6 @@ function Home() {
         userInputType,
         userInputGender,
         userInputContext,
-        userInputArea,
       }),
     });
     const data = await response.json();
@@ -339,7 +338,7 @@ function Home() {
 
   return (
     // eslint-disable-next-line react/jsx-filename-extension
-    <div className="root">
+    <div className="root" onLoad={handleOpen}>
       <div className="container">
         <Head>
           <title>iyagi - Generateur d&apos;histoires</title>
@@ -352,6 +351,34 @@ function Home() {
             <p>Créer une nouvelle histoire</p>
           </div>
         </div>
+
+        <div className="modal">
+          <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <div className="rules">
+              <div className="rules-image">
+                <Image className="logo" src={logo} alt="Logo Iyagi" />
+              </div>
+              <div className="rules-right">
+                <h3>
+                  Génerez une histoire personnalisée avec votre enfant&nbsp;!
+                </h3>
+                <p>
+                  Cliquez sur les différents boutons pour définir tous les
+                  paramètres de votre histoire.
+                </p>
+                <button className="modalButton" onClick={handleClose}>
+                  Commencer
+                </button>
+              </div>
+            </div>
+          </Modal>
+        </div>
+
         {!userInputAge && <AgeComponent setUserInputAge={setUserInputAge} />}
         {!userInputType && (
           <StoryTypeComponent setUserInputType={setUserInputType} />
@@ -363,14 +390,14 @@ function Home() {
         {!userInputContext && (
           <ContextComponent setUserInputContext={setUserInputContext} />
         )}
-        {!userInputArea && (
+        {/*!userInputArea && (
           <AreaComponent setUserInputArea={setUserInputArea} />
-        )}
+        )*/}
         <div
           className="page section perso name"
           style={{ display: isGenerated ? "none" : "" }}
         >
-          <p className="label">Mon personnage s&apos;appelle </p>
+          <p className="label">Ton personnage s&apos;appelle </p>
           <textarea
             className="text-name"
             placeholder="Choisi le nom de ton personnage."
@@ -389,7 +416,7 @@ function Home() {
                 {isGenerating ? (
                   <span className="loader" />
                 ) : (
-                  <p>Créer mon histoire</p>
+                  <p>Créer ton histoire</p>
                 )}
               </div>
             </a>
@@ -421,9 +448,8 @@ function Home() {
       <footer>
         <p>
           Made by{" "}
-          <a href="https://www.linkedin.com/in/maudfrichement/">
-            @MaudFri with Gpt-3
-          </a>
+          <a href="https://www.linkedin.com/in/maudfrichement/">@MaudFri</a>
+          &nbsp;with Gpt-3
         </p>
       </footer>
     </div>
