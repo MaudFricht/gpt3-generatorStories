@@ -406,20 +406,26 @@ function Home() {
           {/* <button className='confirm-name' onClick={setName}>Confirmer le nom</button> */}
 
           {/* Button for generation */}
-          <div className="generate-buttons">
-            <a
-              className={isGenerating ? "loading" : "generate-button"}
-              onClick={callGenerateEndpoint}
-            >
-              <div className="generate">
-                {isGenerating ? (
-                  <span className="loader" />
-                ) : (
-                  <p>Créer ton histoire</p>
-                )}
-              </div>
-            </a>
-          </div>
+          {isGenerating ? (
+            <div className="loader-box">
+              <div className="loader" />
+            </div>
+          ) : (
+            <div className="generate-buttons">
+              <a
+                className={isGenerating ? "loading" : "generate-button"}
+                onClick={callGenerateEndpoint}
+              >
+                <div className="generate">
+                  {isGenerating ? (
+                    <span className="loader" />
+                  ) : (
+                    <p>Créer ton histoire</p>
+                  )}
+                </div>
+              </a>
+            </div>
+          )}
         </div>
         {/* OUTPUT */}
         <div
