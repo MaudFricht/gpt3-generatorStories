@@ -10,6 +10,9 @@ import { useState } from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import * as React from "react";
+import ReactGA from "react-ga";
+const TRACKING_ID = "G-NWK71QMRYB"; // OUR_TRACKING_ID
+ReactGA.initialize(TRACKING_ID);
 
 import girl from "../assets/girl.png";
 import boy from "../assets/boy.png";
@@ -340,7 +343,11 @@ function Home() {
     <div className="root" onLoad={handleOpen}>
       <div className="container">
         <Head>
+          {/* Google tag (gtag.js) */}
           <title>iyagi - Generateur d&apos;histoires</title>
+          <link rel="icon" href="favicon.ico" />
+          <meta property="og:image" content={logo} />
+          <meta name="twitter:card" content={logo} />
         </Head>
         <div className="header">
           <div className="header-title">

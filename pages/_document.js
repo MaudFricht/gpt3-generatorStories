@@ -9,11 +9,14 @@ export default function Document() {
         <meta property="og:title" content="iyagi" key="title" />
         <meta
           property="og:description"
-          content="Générateur d'histoires"
+          content="iyagi - Générateur d'histoires pour enfants"
           key="description"
         />
-        <meta property="og:image" content="" />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="keywords"
+          content="histoire enfant, personnalisée, generateur"
+        />
+        <meta name="author" content="Maud Frichement" />
       </Head>
       <body>
         <Main />
