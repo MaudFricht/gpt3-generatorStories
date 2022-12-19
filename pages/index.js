@@ -37,6 +37,7 @@ import parents from "../assets/parents.png";
 import friends from "../assets/friend.png";
 import love from "../assets/heart.png";
 import logo from "../assets/logo.png";
+import logoNoBg from "../assets/logoNoBg.svg";
 
 /* 
 import {
@@ -71,19 +72,19 @@ const AgeComponent = ({ setUserInputAge }) => {
             className="button"
             onClick={() => setUserInputAge("moins de 3 ans")}
           >
-            <p>- de 3 ans</p>
+            <p className="button-age">- de 3 ans</p>
           </div>
           <div
             className="button"
             onClick={() => setUserInputAge("entre 3 et 4 ans")}
           >
-            <p>3 - 4 ans</p>
+            <p className="button-age">3 - 4 ans</p>
           </div>
           <div
             className="button"
             onClick={() => setUserInputAge("entre 5 et 6 ans")}
           >
-            <p>5 - 6 ans</p>
+            <p className="button-age">5 - 6 ans</p>
           </div>
         </div>
       </div>
@@ -103,6 +104,7 @@ const GenderComponent = ({ setUserInputGender }) => {
           onClick={() => setUserInputGender("feminin")}
         >
           <Image className="button-image" src={girl} alt="fille" />
+          <p className="button-description">Fille</p>
         </div>
         <div
           className="button"
@@ -110,6 +112,7 @@ const GenderComponent = ({ setUserInputGender }) => {
           onClick={() => setUserInputGender("masculin")}
         >
           <Image className="button-image" src={boy} alt="garçon" />
+          <p className="button-description">Garçon</p>
         </div>
       </div>
     </div>
@@ -126,33 +129,39 @@ const JobComponent = ({ setUserInputJob }) => {
           onClick={() => setUserInputJob("une personne de sang royal")}
         >
           <Image className="button-image" src={crown} alt="prince.sse" />
+          <p className="button-description">Prince.sse</p>
         </div>
         <div
           className="button"
           onClick={() => setUserInputJob("un guerrier ou chevalier")}
         >
           <Image className="button-image" src={knight} alt="knight" />
+          <p className="button-description">Chevalier.e</p>
         </div>
         <div className="button" onClick={() => setUserInputJob("un animal")}>
           <Image className="button-image" src={animal} alt="animal" />
+          <p className="button-description">Animal</p>
         </div>
         <div
           className="button"
           onClick={() => setUserInputJob("une créature magique")}
         >
           <Image className="button-image" src={magic} alt="magicien" />
+          <p className="button-description">Mage</p>
         </div>
         <div
           className="button"
           onClick={() => setUserInputJob("un cosmonaute")}
         >
           <Image className="button-image" src={astronaut} alt="astronaute" />
+          <p className="button-description">Astronaute</p>
         </div>
         <div
           className="button"
           onClick={() => setUserInputJob("un robot intelligent et qui parle")}
         >
           <Image className="button-image" src={robot} alt="robot" />
+          <p className="button-description">Robot</p>
         </div>
       </div>
     </div>
@@ -169,40 +178,46 @@ const ContextComponent = ({ setUserInputContext }) => {
           onClick={() => setUserInputContext("dans un chateau")}
         >
           <Image className="button-image" src={castle} alt="Chateau" />
+          <p className="button-description">Chateau</p>
         </div>
         <div className="button" onClick={() => setUserInputContext("en ville")}>
           <Image className="button-image" src={city} alt="Ville" />
+          <p className="button-description">Ville</p>
         </div>
         <div
           className="button"
           onClick={() => setUserInputContext("dans une foret")}
         >
           <Image className="button-image" src={forest} alt="Foret" />
+          <p className="button-description">Forêt</p>
         </div>
         <div
           className="button"
           onClick={() => setUserInputContext("à la montagne")}
         >
           <Image className="button-image" src={mountain} alt="Montagne" />
+          <p className="button-description">Montagne</p>
         </div>
         <div
           className="button"
           onClick={() => setUserInputContext("sous la mer")}
         >
           <Image className="button-image" src={sea} alt="Mer" />
+          <p className="button-description">Océan</p>
         </div>
         <div
           className="button"
           onClick={() => setUserInputContext("dans l'espace")}
         >
           <Image className="button-image" src={space} alt="Espace" />
+          <p className="button-description">Espace</p>
         </div>
       </div>
     </div>
   );
 };
 
-const AreaComponent = ({ setUserInputArea }) => {
+/** const AreaComponent = ({ setUserInputArea }) => {
   return (
     <div className="page area">
       <p className="label">Le moment de la journée est</p>
@@ -222,7 +237,7 @@ const AreaComponent = ({ setUserInputArea }) => {
       </div>
     </div>
   );
-};
+}; */
 
 const StoryTypeComponent = ({ setUserInputType }) => {
   return (
@@ -231,6 +246,7 @@ const StoryTypeComponent = ({ setUserInputType }) => {
       <div className="buttons">
         <div className="button" onClick={() => setUserInputType("d'amour pur")}>
           <Image className="button-image" src={love} alt="Histoire d'amour" />
+          <p className="button-description">Amour</p>
         </div>
         <div
           className="button"
@@ -239,7 +255,9 @@ const StoryTypeComponent = ({ setUserInputType }) => {
           }
         >
           <Image className="button-image" src={war} alt="Une grande bataille" />
+          <p className="button-description">Bataille</p>
         </div>
+
         <div
           className="button"
           onClick={() => setUserInputType("d'une famille aimante")}
@@ -249,6 +267,7 @@ const StoryTypeComponent = ({ setUserInputType }) => {
             src={parents}
             alt="Histoire de famille"
           />
+          <p className="button-description">Famille</p>
         </div>
         <div
           className="button"
@@ -259,6 +278,7 @@ const StoryTypeComponent = ({ setUserInputType }) => {
             src={friends}
             alt="Histoire d'amitié"
           />
+          <p className="button-description">Amitié</p>
         </div>
         <div
           className="button"
@@ -271,6 +291,7 @@ const StoryTypeComponent = ({ setUserInputType }) => {
             src={adventure}
             alt="Histoire d'aventure"
           />
+          <p className="button-description">Aventure</p>
         </div>
       </div>
     </div>
@@ -351,7 +372,7 @@ function Home() {
         </Head>
         <div className="header">
           <div className="header-title">
-            <h1>iyagi</h1>
+            <Image src={logoNoBg}></Image>
           </div>
           <div className="reload" onClick={resetValues}>
             <p>Créer une nouvelle histoire</p>

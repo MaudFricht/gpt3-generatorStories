@@ -41,7 +41,13 @@ body {
   gap: 12px;
 }
 
-.header-title h1 {
+.header-title img {
+  color: transparent;
+  margin: 10px;
+  width: 70%;
+}
+
+/** .header-title h1 {
   width: 100%;
   font-weight: 700;
   font-size: 30px;
@@ -56,7 +62,7 @@ body {
   letter-spacing: 0.2em;
   text-align: left;
   color: #d6575f;
-}
+}*/
 
 .header .reload {
   display: flex;
@@ -304,10 +310,18 @@ textarea:focus {
   font-family: inherit;
   font-weight: 700;
   padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.button p {
+.button .button-age {
   color: #d6575f;
+}
+
+.button .button-description {
+  font-size: 1rem;
+  margin: 0px;
 }
 
 .button:hover {
@@ -323,7 +337,7 @@ textarea:focus {
 
 .button-image {
   width: auto;
-  height: 80%;
+  height: 70%;
 }
 
 .confirm-name {
