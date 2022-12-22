@@ -7,12 +7,12 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
-import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import * as React from "react";
 import ReactGA from "react-ga";
 const TRACKING_ID = "G-NWK71QMRYB"; // OUR_TRACKING_ID
 ReactGA.initialize(TRACKING_ID);
+ReactGA.pageview("/");
 
 import girl from "../assets/girl.png";
 import boy from "../assets/boy.png";
@@ -70,21 +70,27 @@ const AgeComponent = ({ setUserInputAge }) => {
         <div className="buttons">
           <div
             className="button"
-            onClick={() => setUserInputAge("moins de 3 ans")}
-          >
-            <p className="button-age">- de 3 ans</p>
-          </div>
-          <div
-            className="button"
-            onClick={() => setUserInputAge("entre 3 et 4 ans")}
+            onClick={() =>
+              setUserInputAge("être courte et faire moins de 200 mots.")
+            }
           >
             <p className="button-age">3 - 4 ans</p>
           </div>
           <div
             className="button"
-            onClick={() => setUserInputAge("entre 5 et 6 ans")}
+            onClick={() => setUserInputAge("faire entre 300 et 400 mots")}
           >
             <p className="button-age">5 - 6 ans</p>
+          </div>
+          <div
+            className="button"
+            onClick={() =>
+              setUserInputAge(
+                "être complexe et être longue. Elle doit inclure plusieurs personnages."
+              )
+            }
+          >
+            <p className="button-age">7 - 8 ans</p>
           </div>
         </div>
       </div>
