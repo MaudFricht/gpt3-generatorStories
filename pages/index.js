@@ -10,8 +10,10 @@ import { useState } from "react";
 import Modal from "@mui/material/Modal";
 import * as React from "react";
 import ReactGA from "react-ga";
-const TRACKING_ID = "G-NWK71QMRYB"; // OUR_TRACKING_ID
-ReactGA.initialize(TRACKING_ID);
+ReactGA.initialize("G-NWK71QMRYB", {
+  debug: true,
+  alwaysSendToDefaultTracker: true,
+});
 ReactGA.pageview("/");
 
 import girl from "../assets/girl.png";
@@ -61,6 +63,8 @@ import {
   eighties,
   whenever,
 } from "../assets"; */
+
+import useAnalyticsEventTracker from "./useAnalyticsEventTracker";
 
 const AgeComponent = ({ setUserInputAge }) => {
   return (
@@ -320,6 +324,8 @@ function Home() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const gaEventTracker = useAnalyticsEventTracker("Create story");
+
   const callGenerateEndpoint = async () => {
     setIsGenerating(true);
     console.log("Calling OpenAI...");
@@ -445,7 +451,10 @@ function Home() {
               <div className="loader" />
             </div>
           ) : (
-            <div className="generate-buttons">
+            <div
+              className="generate-buttons"
+              onClick={() => gaEventTracker("Create story")}
+            >
               <a
                 className={isGenerating ? "loading" : "generate-button"}
                 onClick={callGenerateEndpoint}
