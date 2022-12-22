@@ -7,7 +7,7 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 const generateAction = async (req, res) => {
-  const basePromptPrefix = `Écrit une histoire pour enfants avec un début, un milieu et une fin. Rends l'histoire captivante.
+  const basePromptPrefix = `Écrit une histoire pour enfants, bien rédigée, avec un début, un milieu et une fin. Rends l'histoire captivante.
     Évite les répétitions de mots et utilise des synonymes. Fait attention à la concordance des temps.
     \n
     L'histoire doit ${req.body.userInputAge}.
