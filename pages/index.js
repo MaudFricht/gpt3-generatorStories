@@ -29,8 +29,6 @@ import forest from "../assets/forest.png";
 import sea from "../assets/seaweed.png";
 import mountain from "../assets/mountain.png";
 import space from "../assets/planet.png";
-import moon from "../assets/moon.png";
-import sun from "../assets/sun.png";
 import adventure from "../assets/adventure.png";
 import war from "../assets/war.png";
 import parents from "../assets/parents.png";
@@ -38,6 +36,7 @@ import friends from "../assets/friend.png";
 import love from "../assets/heart.png";
 import logo from "../assets/logo.png";
 import logoNoBg from "../assets/logoNoBg.svg";
+import logometa from "../assets/logo-meta.png";
 
 /* 
 import {
@@ -378,8 +377,7 @@ function Home() {
           {/* Google tag (gtag.js) */}
           <title>{t("title")}</title>
           <link rel="icon" href="favicon.ico" />
-          <meta property="og:image" content={logo} />
-          <meta name="twitter:card" content={logo} />
+         
         </Head>
         <div className="header">
           <div className="header-title">

@@ -15,16 +15,16 @@
     "promptPart1":"Tell me a full Tale for kid with a beginning, middle, and end. Make the story feel awesome. Avoid repeting words.",
     
     "promptPart3":"The Hero : He is called ",
-    "promptPart4":"It's",
-    "promptPart5": "and it's a ",
+    "promptPart4":"It's ",
+    "promptPart5": " and it's a ",
 
     
     "promptPart8": "Story :",
   
-    "promptPart2":"The tale has to be",
+    "promptPart2":"The tale has to be ",
     "age-label": "You are creating a story for a child how old",
     "age-3": "3-4 years old",
-    "age-3-input": "short and less than 200 words",
+    "age-3-input": "simple and less than 200 words",
     "age-5": "5-6 years old",
     "age-5-input": "between 300 and 400 words",
     "age-7": "7-8 years old",
