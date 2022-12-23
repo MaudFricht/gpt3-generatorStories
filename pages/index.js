@@ -362,9 +362,9 @@ function Home() {
   };
 
   const prompt = `${t("promptPart1")}\n
-  ${t("promptPart2")} ${userInputAge}.
+  ${t("promptPart2")}${userInputAge}.
   \n
-  ${t("promptPart3")} ${userInputName}. ${t("promptPart4")}${userInputJob} ${t("promptPart5")}${userInputGender}.
+  ${t("promptPart3")}${userInputName}. ${t("promptPart4")}${userInputJob}${t("promptPart5")}${userInputGender}.
   ${t("promptPart6")}${userInputType}. ${t("promptPart7")}${userInputContext}.
   ${t("promptPart8")}\n`;
 

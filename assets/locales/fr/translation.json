@@ -11,11 +11,11 @@
 
   "output-title": "Mon histoire",
 
-  "promptPart1":"Écrit une histoire pour enfants, bien rédigée, avec un début, un milieu et une fin. Rends l'histoire captivante. Évite les répétitions de mots et utilise des synonymes. Fait attention à la concordance des temps.",
-  "promptPart2":"L'histoire doit",
-  "promptPart3":"Personnage : Le héro s'appelle",
+  "promptPart1":"Raconte une histoire pour enfant, complète, avec un début, un milieu et une fin. Rends l'histoire captivante. Évite les répétitions de mots et utilise des synonymes. Fait attention à la concordance des temps.",
+  "promptPart2":"L'histoire doit ",
+  "promptPart3":"Le personnage : Le héro s'appelle ",
   "promptPart4":"C'est ",
-  "promptPart5": "de sexe ",
+  "promptPart5": " de sexe ",
   "promptPart6": "Contexte : C'est une histoire ",
   "promptPart7": "L'histoire se passe ",
   "promptPart8": "Histoire :",
@@ -23,7 +23,7 @@
 
   "age-label": "Vous souhaitez une histoire pour un enfant de",
   "age-3": "3 - 4 ans",
-  "age-3-input": "être courte et faire moins de 200 mots",
+  "age-3-input": "être simple et faire moins de 200 mots",
   "age-5": "5 - 6 ans",
   "age-5-input": "faire entre 300 et 400 mots",
   "age-7": "7 - 8 ans",
