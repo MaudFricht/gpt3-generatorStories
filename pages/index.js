@@ -377,21 +377,25 @@ function Home() {
           {/* Google tag (gtag.js) */}
           <title>{t("title")}</title>
           <link rel="icon" href="favicon.ico" />
-          <meta name="description" content="iyagi - Générateur d'histoires pour enfants"/>
-          <meta itemprop="name" content="iyagi"/>
-          <meta itemprop="description" content="iyagi - Générateur d'histoires pour enfants"/>
-          <meta itemprop="image" content="https://zupimages.net/viewer.php?id=22/51/teag.png"/>
+          <meta name="title" content="iyagi - Générateur d'histoires">
+          <meta name="description" content="Création d'histoires et contes pour enfants adaptés et personnalisés. 
+          ">
 
-          <meta property="og:url" content="https://www.iyagi.xyz"/>
-          <meta property="og:type" content="website"/>
-          <meta property="og:title" content="iyagi"/>
-          <meta property="og:description" content="iyagi - Générateur d'histoires pour enfants"/>
-          <meta property="og:image" content="https://zupimages.net/viewer.php?id=22/51/teag.png"/>
 
-          <meta name="twitter:card" content="summary_large_image"/>
-          <meta name="twitter:title" content="iyagi"/>
-          <meta name="twitter:description" content="iyagi - Générateur d'histoires pour enfants"/>
-          <meta name="twitter:image" content="https://zupimages.net/viewer.php?id=22/51/teag.png"/>         
+          <meta property="og:type" content="website">
+          <meta property="og:url" content="https://www.iyagi.xyz/">
+          <meta property="og:title" content="iyagi - Générateur d'histoires">
+          <meta property="og:description" content="Création d'histoires et contes pour enfants adaptés et personnalisés. 
+          ">
+          <meta property="og:image" content="https://imgur.com/a/Fi7r6eS">
+
+
+          <meta property="twitter:card" content="summary_large_image">
+          <meta property="twitter:url" content="https://www.iyagi.xyz/">
+          <meta property="twitter:title" content="iyagi - Générateur d'histoires">
+          <meta property="twitter:description" content="Création d'histoires et contes pour enfants adaptés et personnalisés. 
+          ">
+          <meta property="twitter:image" content="https://imgur.com/a/Fi7r6eS"></meta>         
         </Head>
         <div className="header">
           <div className="header-title">
