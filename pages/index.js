@@ -377,7 +377,21 @@ function Home() {
           {/* Google tag (gtag.js) */}
           <title>{t("title")}</title>
           <link rel="icon" href="favicon.ico" />
-         
+          <meta name="description" content="iyagi - Générateur d'histoires pour enfants"/>
+          <meta itemprop="name" content="iyagi"/>
+          <meta itemprop="description" content="iyagi - Générateur d'histoires pour enfants"/>
+          <meta itemprop="image" content="https://zupimages.net/viewer.php?id=22/51/teag.png"/>
+
+          <meta property="og:url" content="https://www.iyagi.xyz"/>
+          <meta property="og:type" content="website"/>
+          <meta property="og:title" content="iyagi"/>
+          <meta property="og:description" content="iyagi - Générateur d'histoires pour enfants"/>
+          <meta property="og:image" content="https://zupimages.net/viewer.php?id=22/51/teag.png"/>
+
+          <meta name="twitter:card" content="summary_large_image"/>
+          <meta name="twitter:title" content="iyagi"/>
+          <meta name="twitter:description" content="iyagi - Générateur d'histoires pour enfants"/>
+          <meta name="twitter:image" content="https://zupimages.net/viewer.php?id=22/51/teag.png"/>         
         </Head>
         <div className="header">
           <div className="header-title">
