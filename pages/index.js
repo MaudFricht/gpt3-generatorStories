@@ -61,7 +61,6 @@ import {
   whenever,
 } from "../assets"; */
 
-
 const AgeComponent = ({ setUserInputAge }) => {
   const { t, i18n } = useTranslation();
   return (
@@ -71,9 +70,7 @@ const AgeComponent = ({ setUserInputAge }) => {
         <div className="buttons">
           <div
             className="button"
-            onClick={() =>
-              setUserInputAge(t("age-3-input"))
-            }
+            onClick={() => setUserInputAge(t("age-3-input"))}
           >
             <p className="button-age">{t("age-3")}</p>
           </div>
@@ -85,9 +82,7 @@ const AgeComponent = ({ setUserInputAge }) => {
           </div>
           <div
             className="button"
-            onClick={() =>
-              setUserInputAge(t("age-7-input"))
-            }
+            onClick={() => setUserInputAge(t("age-7-input"))}
           >
             <p className="button-age">{t("age-7")}</p>
           </div>
@@ -145,7 +140,10 @@ const JobComponent = ({ setUserInputJob }) => {
           <Image className="button-image" src={knight} alt={t("job-knight")} />
           <p className="button-description">{t("job-knight")}</p>
         </div>
-        <div className="button" onClick={() => setUserInputJob(t("job-animal-input"))}>
+        <div
+          className="button"
+          onClick={() => setUserInputJob(t("job-animal-input"))}
+        >
           <Image className="button-image" src={animal} alt={t("job-animal")} />
           <p className="button-description">{t("job-animal")}</p>
         </div>
@@ -160,10 +158,17 @@ const JobComponent = ({ setUserInputJob }) => {
           className="button"
           onClick={() => setUserInputJob(t("job-astronaut-input"))}
         >
-          <Image className="button-image" src={astronaut} alt={t("job-astronaut")} />
+          <Image
+            className="button-image"
+            src={astronaut}
+            alt={t("job-astronaut")}
+          />
           <p className="button-description">{t("job-astronaut")}</p>
         </div>
-        <div className="button" onClick={() => setUserInputJob(t("job-robot-input"))}>
+        <div
+          className="button"
+          onClick={() => setUserInputJob(t("job-robot-input"))}
+        >
           <Image className="button-image" src={robot} alt={t("job-robot")} />
           <p className="button-description">{t("job-robot")}</p>
         </div>
@@ -182,10 +187,17 @@ const ContextComponent = ({ setUserInputContext }) => {
           className="button"
           onClick={() => setUserInputContext(t("context-castle-input"))}
         >
-          <Image className="button-image" src={castle} alt={t("context-castle")} />
+          <Image
+            className="button-image"
+            src={castle}
+            alt={t("context-castle")}
+          />
           <p className="button-description">{t("context-castle")}</p>
         </div>
-        <div className="button" onClick={() => setUserInputContext(t("context-city-input"))}>
+        <div
+          className="button"
+          onClick={() => setUserInputContext(t("context-city-input"))}
+        >
           <Image className="button-image" src={city} alt={t("context-city")} />
           <p className="button-description">{t("context-city")}</p>
         </div>
@@ -193,14 +205,22 @@ const ContextComponent = ({ setUserInputContext }) => {
           className="button"
           onClick={() => setUserInputContext(t("context-forest-input"))}
         >
-          <Image className="button-image" src={forest} alt={t("context-forest")} />
+          <Image
+            className="button-image"
+            src={forest}
+            alt={t("context-forest")}
+          />
           <p className="button-description">{t("context-forest")}</p>
         </div>
         <div
           className="button"
           onClick={() => setUserInputContext(t("context-montain-input"))}
         >
-          <Image className="button-image" src={mountain} alt={t("context-montain")} />
+          <Image
+            className="button-image"
+            src={mountain}
+            alt={t("context-montain")}
+          />
           <p className="button-description">{t("context-montain")}</p>
         </div>
         <div
@@ -214,7 +234,11 @@ const ContextComponent = ({ setUserInputContext }) => {
           className="button"
           onClick={() => setUserInputContext(t("context-space-input"))}
         >
-          <Image className="button-image" src={space} alt={t("context-space")} />
+          <Image
+            className="button-image"
+            src={space}
+            alt={t("context-space")}
+          />
           <p className="button-description">{t("context-space")}</p>
         </div>
       </div>
@@ -228,15 +252,16 @@ const StoryTypeComponent = ({ setUserInputType }) => {
     <div className="page type">
       <p className="label">{t("type-label")}</p>
       <div className="buttons">
-        <div className="button" onClick={() => setUserInputType(t("type-love-input"))}>
+        <div
+          className="button"
+          onClick={() => setUserInputType(t("type-love-input"))}
+        >
           <Image className="button-image" src={love} alt={t("type-love")} />
           <p className="button-description">{t("type-love")}</p>
         </div>
         <div
           className="button"
-          onClick={() =>
-            setUserInputType(t("type-battle-input"))
-          }
+          onClick={() => setUserInputType(t("type-battle-input"))}
         >
           <Image className="button-image" src={war} alt={t("type-battle")} />
           <p className="button-description">{t("type-battle")}</p>
@@ -266,9 +291,7 @@ const StoryTypeComponent = ({ setUserInputType }) => {
         </div>
         <div
           className="button"
-          onClick={() =>
-            setUserInputType(t("type-adventure-input"))
-          }
+          onClick={() => setUserInputType(t("type-adventure-input"))}
         >
           <Image
             className="button-image"
@@ -281,7 +304,6 @@ const StoryTypeComponent = ({ setUserInputType }) => {
     </div>
   );
 };
-
 
 function Home() {
   const [userInputAge, setUserInputAge] = useState(null);
@@ -334,7 +356,6 @@ function Home() {
     setUserInputName(event.target.value);
   };
 
-
   const resetValues = () => {
     setUserInputGender(null);
     setUserInputAge(null);
@@ -350,11 +371,10 @@ function Home() {
     i18n.changeLanguage(languageValue);
     setLanguageEn(true);
     resetValues();
-    
   };
 
   const changeLanguageHandlerToFr = (e) => {
-    const languageValue = e.target.value
+    const languageValue = e.target.value;
     i18n.changeLanguage(languageValue);
     setLanguageEn(false);
     resetValues();
@@ -363,7 +383,9 @@ function Home() {
   const prompt = `${t("promptPart1")}\n
   ${t("promptPart2")}${userInputAge}.
   \n
-  ${t("promptPart3")}${userInputName}. ${t("promptPart4")}${userInputJob}${t("promptPart5")}${userInputGender}.
+  ${t("promptPart3")}${userInputName}. ${t("promptPart4")}${userInputJob}${t(
+    "promptPart5"
+  )}${userInputGender}.
   ${t("promptPart6")}${userInputType}. ${t("promptPart7")}${userInputContext}.
   ${t("promptPart8")}\n`;
 
@@ -377,45 +399,68 @@ function Home() {
           {/* Google tag (gtag.js) */}
           <title>{t("title")}</title>
           <link rel="icon" href="favicon.ico" />
-          <meta name="title" content="iyagi - Générateur d'histoires">
-          <meta name="description" content="Création d'histoires et contes pour enfants adaptés et personnalisés. 
-          ">
+          <meta name="title" content="iyagi - Générateur d'histoires" />
+          <meta
+            name="description"
+            content="Création d'histoires et contes pour enfants adaptés et personnalisés. 
+          "
+          />
 
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://www.iyagi.xyz/" />
+          <meta property="og:title" content="iyagi - Générateur d'histoires" />
+          <meta
+            property="og:description"
+            content="Création d'histoires et contes pour enfants adaptés et personnalisés. 
+          "
+          />
+          <meta property="og:image" content="https://imgur.com/a/Fi7r6eS" />
 
-          <meta property="og:type" content="website">
-          <meta property="og:url" content="https://www.iyagi.xyz/">
-          <meta property="og:title" content="iyagi - Générateur d'histoires">
-          <meta property="og:description" content="Création d'histoires et contes pour enfants adaptés et personnalisés. 
-          ">
-          <meta property="og:image" content="https://imgur.com/a/Fi7r6eS">
-
-
-          <meta property="twitter:card" content="summary_large_image">
-          <meta property="twitter:url" content="https://www.iyagi.xyz/">
-          <meta property="twitter:title" content="iyagi - Générateur d'histoires">
-          <meta property="twitter:description" content="Création d'histoires et contes pour enfants adaptés et personnalisés. 
-          ">
-          <meta property="twitter:image" content="https://imgur.com/a/Fi7r6eS"></meta>         
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta property="twitter:url" content="https://www.iyagi.xyz/" />
+          <meta
+            property="twitter:title"
+            content="iyagi - Générateur d'histoires"
+          />
+          <meta
+            property="twitter:description"
+            content="Création d'histoires et contes pour enfants adaptés et personnalisés. 
+          "
+          />
+          <meta
+            property="twitter:image"
+            content="https://imgur.com/a/Fi7r6eS"
+          ></meta>
         </Head>
         <div className="header">
           <div className="header-title">
             <Image src={logoNoBg}></Image>
           </div>
           <div className="header-right">
-            <div className="language-switch"> 
-            { languageIsEn ? (
-                    <button className="language-selector en" value="en" onClick={changeLanguageHandlerToFr}>🇬🇧</button>
-                  ) : (
-                    <button className="language-selector fr" value="fr" onClick={changeLanguageHandlerToEn}>🇫🇷</button>
-                  )}     
-      
+            <div className="language-switch">
+              {languageIsEn ? (
+                <button
+                  className="language-selector en"
+                  value="en"
+                  onClick={changeLanguageHandlerToFr}
+                >
+                  🇬🇧
+                </button>
+              ) : (
+                <button
+                  className="language-selector fr"
+                  value="fr"
+                  onClick={changeLanguageHandlerToEn}
+                >
+                  🇫🇷
+                </button>
+              )}
             </div>
 
             <div className="reload" onClick={resetValues}>
               <p>{t("header-newStory")}</p>
             </div>
           </div>
-
         </div>
 
         <div className="modal">
@@ -430,7 +475,7 @@ function Home() {
                 <Image className="logo" src={logo} alt="Logo Iyagi" />
               </div>
               <div className="rules-right">
-                <h3>{t("rules-title") }</h3>
+                <h3>{t("rules-title")}</h3>
                 <p>{t("rules-description")}</p>
                 <button className="modalButton" onClick={handleClose}>
                   {t("rules-button")}
@@ -451,7 +496,7 @@ function Home() {
         {!userInputContext && (
           <ContextComponent setUserInputContext={setUserInputContext} />
         )}
-        
+
         <div
           className="page section perso name"
           style={{ display: isGenerated ? "none" : "" }}
@@ -518,7 +563,5 @@ function Home() {
     </div>
   );
 }
-
-
 
 export default Home;
