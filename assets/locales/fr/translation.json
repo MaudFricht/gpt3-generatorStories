@@ -1,0 +1,80 @@
+{
+  "title": "iyagi - Générateur d'histoires",
+  "header-newStory": "Créer une nouvelle histoire",
+  
+  "rules-title": "Génerez une histoire personnalisée avec votre enfant",
+  "rules-description": "Cliquez sur les différents boutons pour définir tous les paramètres de votre histoire.",
+  "rules-button": "Commencer",
+
+
+  "button-create": "Créer ton histoire",
+
+  "output-title": "Mon histoire",
+
+  "promptPart1":"Écrit une histoire pour enfants, bien rédigée, avec un début, un milieu et une fin. Rends l'histoire captivante. Évite les répétitions de mots et utilise des synonymes. Fait attention à la concordance des temps.",
+  "promptPart2":"L'histoire doit",
+  "promptPart3":"Personnage : Il ou elle s'appelle",
+  "promptPart4":"C'est ",
+  "promptPart5": "de sexe ",
+  "promptPart6": "Contexte : C'est une histoire ",
+  "promptPart7": "L'histoire se passe ",
+  "promptPart8": "Histoire :",
+
+
+  "age-label": "Vous souhaitez une histoire pour un enfant de",
+  "age-3": "3 - 4 ans",
+  "age-3-input": "être courte et faire moins de 200 mots",
+  "age-5": "5 - 6 ans",
+  "age-5-input": "faire entre 300 et 400 mots",
+  "age-7": "7 - 8 ans",
+  "age-7-input": "être complexe et être longue. Elle doit inclure plusieurs personnages.",
+
+  "gender-label": "Le héro de ton histoire est",
+  "gender-girl": "Fille",
+  "gender-girl-input": "feminin",
+  "gender-man": "Garçon",
+  "gender-man-input": "masculin",
+
+  "job-label": "Ton héro est",
+  "job-king": "Prince.sse",
+  "job-king-input": "une personne de sang royal",
+  "job-knight": "Chevalier.e",
+  "job-knight-input": "un guerrier ou chevalier",
+  "job-animal": "Animal",
+  "job-animal-input": "un animal",
+  "job-magic": "Mage",
+  "job-magic-input": "une créature magique",
+  "job-astronaut": "Astronaute",
+  "job-astronaut-input": "un cosmonaute",
+  "job-robot": "Robot",
+  "job-robot-input": "un robot humanoïde et intelligent",
+  
+  "context-label": "Ton histoire se situe",
+  "context-castle": "Chateau",
+  "context-castle-input": "dans un chateau",
+  "context-city": "Ville",
+  "context-city-input": "en ville",
+  "context-forest": "Forêt",
+  "context-forest-input": "dans une foret",
+  "context-montain": "Montagne",
+  "context-montain-input": "à la montagne",
+  "context-sea": "Mer",
+  "context-sea-input": "sous la mer",
+  "context-space": "Espace",
+  "context-space-input": "dans l'espace",
+  
+  "type-label": "Quel type d'histoire souhaites tu écrire ?",
+  "type-love": "Amour",
+  "type-love-input": "d'amour pur",
+  "type-battle": "Bataille",
+  "type-battle-input": "avec une bataille contre un méchant",
+  "type-family": "Famille",
+  "type-family-input": "d'une famille aimante",
+  "type-friend": "Amitié",
+  "type-friend-input": "d'amitié profonde et sincère",
+  "type-adventure": "Aventure",
+  "type-adventure-input": "d'aventure et de découverte d'un monde",
+  
+  "name-label": "Choisi le nom de ton héro.",
+  "name-placeholder": "Choisi le nom de ton héro."
+}

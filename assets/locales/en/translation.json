@@ -1,0 +1,86 @@
+{
+
+    "title": "iyagi - Create your tale",
+    "header-newStory": "Create a new tale",
+    
+    "rules-title": "Make up a unique tale with your child.",
+    "rules-description": "Set all of your tale's parameters by clicking the various buttons.",
+    "rules-button": "Start to create",
+  
+  
+    "button-create": "Create your tale",
+  
+    "output-title": "My tale",
+  
+    "promptPart1":"Tell me a full Tale for kid with a beginning, middle, and end. Make the story feel awesome. Avoid repeting words.",
+    
+    "promptPart3":"The Hero : He is called ",
+    "promptPart4":"It's",
+    "promptPart5": "and it's a ",
+
+    
+    "promptPart8": "Story :",
+  
+    "promptPart2":"The tale has to be",
+    "age-label": "You are creating a story for a child how old",
+    "age-3": "3-4 years old",
+    "age-3-input": "short and less than 200 words",
+    "age-5": "5-6 years old",
+    "age-5-input": "between 300 and 400 words",
+    "age-7": "7-8 years old",
+    "age-7-input": "complex and lenghty. It has to include multiple characters. At the end of the story, include a plot twist between the main character and a bad guy where something crazy happens to the main character. ",
+  
+    "gender-label": "Your hero is",
+    "gender-girl": "Girl",
+    "gender-girl-input": "girl",
+    "gender-man": "Boy",
+    "gender-man-input": "boy",
+  
+    "job-label": "What is your hero?",
+    "job-king": "a Prince.ss",
+    "job-king-input": "a person of royal blood",
+    "job-knight": "a Knight",
+    "job-knight-input": "a warrior",
+    "job-animal": "an Animal",
+    "job-animal-input": "an animal",
+    "job-magic": "a Mage",
+    "job-magic-input": "magical creature",
+    "job-astronaut": "an Astronaute",
+    "job-astronaut-input": "an astronaut",
+    "job-robot": "a Robot",
+    "job-robot-input": "a humanoid and intelligent robot",
+
+
+    "promptPart7": "It's happening ",
+    "context-label": "Where does the story take place?",
+    "context-castle": "Castle",
+    "context-castle-input": "in a castle",
+    "context-city": "City",
+    "context-city-input": "in a big and modern city",
+    "context-forest": "Forest",
+    "context-forest-input": "in a lush and dark forest",
+    "context-montain": "Montain",
+    "context-montain-input": "in the mountains",
+    "context-sea": "Sea",
+    "context-sea-input": "under the sea",
+    "context-space": "Space",
+    "context-space-input": "into space",
+
+    "promptPart6": "Context : It's a ",
+  
+    "type-label": "What kind of tale do you want to write?",
+    "type-love": "Love",
+    "type-love-input": "love story",
+    "type-battle": "Battle",
+    "type-battle-input": "story with a big battle",
+    "type-family": "Family",
+    "type-family-input": "tale about a loving family",
+    "type-friend": "Friendship",
+    "type-friend-input": "tale about true friendship",
+    "type-adventure": "Adventure",
+    "type-adventure-input": "a tale about going on an adventure and discovering the world",
+    
+    "name-label": "Choose your hero's name.",
+    "name-placeholder": "My hero's name is..."
+
+}

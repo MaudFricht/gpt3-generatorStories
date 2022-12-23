@@ -9,13 +9,11 @@ import Image from "next/image";
 import { useState } from "react";
 import Modal from "@mui/material/Modal";
 import * as React from "react";
-import ReactGA from "react-ga";
-ReactGA.initialize("G-NWK71QMRYB", {
-  debug: true,
-  alwaysSendToDefaultTracker: true,
-});
-ReactGA.pageview("/");
 
+import i18n from "../assets/i18n.js";
+import { useTranslation } from "react-i18next";
+
+// IMPORT IMAGES
 import girl from "../assets/girl.png";
 import boy from "../assets/boy.png";
 import castle from "../assets/castle.png";
@@ -64,37 +62,35 @@ import {
   whenever,
 } from "../assets"; */
 
-import useAnalyticsEventTracker from "./useAnalyticsEventTracker";
 
 const AgeComponent = ({ setUserInputAge }) => {
+  const { t, i18n } = useTranslation();
   return (
     <div className="page section age">
       <div className="questions">
-        <p className="label">Vous souhaitez une histoire pour un enfant de</p>
+        <p className="label">{t("age-label")}</p>
         <div className="buttons">
           <div
             className="button"
             onClick={() =>
-              setUserInputAge("être courte et faire moins de 200 mots.")
+              setUserInputAge(t("age-3-input"))
             }
           >
-            <p className="button-age">3 - 4 ans</p>
+            <p className="button-age">{t("age-3")}</p>
           </div>
           <div
             className="button"
-            onClick={() => setUserInputAge("faire entre 300 et 400 mots")}
+            onClick={() => setUserInputAge(t("age-5-input"))}
           >
-            <p className="button-age">5 - 6 ans</p>
+            <p className="button-age">{t("age-5")}</p>
           </div>
           <div
             className="button"
             onClick={() =>
-              setUserInputAge(
-                "être complexe et être longue. Elle doit inclure plusieurs personnages."
-              )
+              setUserInputAge(t("age-7-input"))
             }
           >
-            <p className="button-age">7 - 8 ans</p>
+            <p className="button-age">{t("age-7")}</p>
           </div>
         </div>
       </div>
@@ -103,26 +99,27 @@ const AgeComponent = ({ setUserInputAge }) => {
 };
 
 const GenderComponent = ({ setUserInputGender }) => {
+  const { t, i18n } = useTranslation();
   return (
     <div className="page section sexe">
       {/*<h2 className="rules">Choisi ton personnage&nbsp;!</h2>*/}
-      <p className="label">Ton personnage est</p>
+      <p className="label">{t("gender-label")}</p>
       <div className="buttons">
         <div
           className="button"
-          value="Feminin"
-          onClick={() => setUserInputGender("feminin")}
+          value={t("gender-girl-input")}
+          onClick={() => setUserInputGender(t("gender-girl-input"))}
         >
-          <Image className="button-image" src={girl} alt="fille" />
-          <p className="button-description">Fille</p>
+          <Image className="button-image" src={girl} alt={t("gender-man")} />
+          <p className="button-description">{t("gender-girl")}</p>
         </div>
         <div
           className="button"
-          value="Masculin"
-          onClick={() => setUserInputGender("masculin")}
+          value={t("gender-man-input")}
+          onClick={() => setUserInputGender(t("gender-man-input"))}
         >
-          <Image className="button-image" src={boy} alt="garçon" />
-          <p className="button-description">Garçon</p>
+          <Image className="button-image" src={boy} alt={t("gender-man")} />
+          <p className="button-description">{t("gender-man")}</p>
         </div>
       </div>
     </div>
@@ -130,48 +127,46 @@ const GenderComponent = ({ setUserInputGender }) => {
 };
 
 const JobComponent = ({ setUserInputJob }) => {
+  const { t, i18n } = useTranslation();
   return (
     <div className="page job">
-      <p className="label">C'est un</p>
+      <p className="label">{t("job-label")}</p>
       <div className="buttons">
         <div
           className="button"
-          onClick={() => setUserInputJob("une personne de sang royal")}
+          onClick={() => setUserInputJob(t("job-king-input"))}
         >
-          <Image className="button-image" src={crown} alt="prince.sse" />
-          <p className="button-description">Prince.sse</p>
+          <Image className="button-image" src={crown} alt={t("job-king")} />
+          <p className="button-description">{t("job-king")}</p>
         </div>
         <div
           className="button"
-          onClick={() => setUserInputJob("un guerrier ou chevalier")}
+          onClick={() => setUserInputJob(t("job-knight-input"))}
         >
-          <Image className="button-image" src={knight} alt="knight" />
-          <p className="button-description">Chevalier.e</p>
+          <Image className="button-image" src={knight} alt={t("job-knight")} />
+          <p className="button-description">{t("job-knight")}</p>
         </div>
-        <div className="button" onClick={() => setUserInputJob("un animal")}>
-          <Image className="button-image" src={animal} alt="animal" />
-          <p className="button-description">Animal</p>
-        </div>
-        <div
-          className="button"
-          onClick={() => setUserInputJob("une créature magique")}
-        >
-          <Image className="button-image" src={magic} alt="magicien" />
-          <p className="button-description">Mage</p>
+        <div className="button" onClick={() => setUserInputJob(t("job-animal-input"))}>
+          <Image className="button-image" src={animal} alt={t("job-animal")} />
+          <p className="button-description">{t("job-animal")}</p>
         </div>
         <div
           className="button"
-          onClick={() => setUserInputJob("un cosmonaute")}
+          onClick={() => setUserInputJob(t("job-magic-input"))}
         >
-          <Image className="button-image" src={astronaut} alt="astronaute" />
-          <p className="button-description">Astronaute</p>
+          <Image className="button-image" src={magic} alt={t("job-magic")} />
+          <p className="button-description">{t("job-magic")}</p>
         </div>
         <div
           className="button"
-          onClick={() => setUserInputJob("un robot intelligent et qui parle")}
+          onClick={() => setUserInputJob(t("job-astronaut-input"))}
         >
-          <Image className="button-image" src={robot} alt="robot" />
-          <p className="button-description">Robot</p>
+          <Image className="button-image" src={astronaut} alt={t("job-astronaut")} />
+          <p className="button-description">{t("job-astronaut")}</p>
+        </div>
+        <div className="button" onClick={() => setUserInputJob(t("job-robot-input"))}>
+          <Image className="button-image" src={robot} alt={t("job-robot")} />
+          <p className="button-description">{t("job-robot")}</p>
         </div>
       </div>
     </div>
@@ -179,134 +174,115 @@ const JobComponent = ({ setUserInputJob }) => {
 };
 
 const ContextComponent = ({ setUserInputContext }) => {
+  const { t, i18n } = useTranslation();
   return (
     <div className="page context">
-      <p className="label">Ton histoire se situe</p>
+      <p className="label">{t("context-label")}</p>
       <div className="buttons">
         <div
           className="button"
-          onClick={() => setUserInputContext("dans un chateau")}
+          onClick={() => setUserInputContext(t("context-castle-input"))}
         >
-          <Image className="button-image" src={castle} alt="Chateau" />
-          <p className="button-description">Chateau</p>
+          <Image className="button-image" src={castle} alt={t("context-castle")} />
+          <p className="button-description">{t("context-castle")}</p>
         </div>
-        <div className="button" onClick={() => setUserInputContext("en ville")}>
-          <Image className="button-image" src={city} alt="Ville" />
-          <p className="button-description">Ville</p>
-        </div>
-        <div
-          className="button"
-          onClick={() => setUserInputContext("dans une foret")}
-        >
-          <Image className="button-image" src={forest} alt="Foret" />
-          <p className="button-description">Forêt</p>
+        <div className="button" onClick={() => setUserInputContext(t("context-city-input"))}>
+          <Image className="button-image" src={city} alt={t("context-city")} />
+          <p className="button-description">{t("context-city")}</p>
         </div>
         <div
           className="button"
-          onClick={() => setUserInputContext("à la montagne")}
+          onClick={() => setUserInputContext(t("context-forest-input"))}
         >
-          <Image className="button-image" src={mountain} alt="Montagne" />
-          <p className="button-description">Montagne</p>
+          <Image className="button-image" src={forest} alt={t("context-forest")} />
+          <p className="button-description">{t("context-forest")}</p>
         </div>
         <div
           className="button"
-          onClick={() => setUserInputContext("sous la mer")}
+          onClick={() => setUserInputContext(t("context-montain-input"))}
         >
-          <Image className="button-image" src={sea} alt="Mer" />
-          <p className="button-description">Océan</p>
+          <Image className="button-image" src={mountain} alt={t("context-montain")} />
+          <p className="button-description">{t("context-montain")}</p>
         </div>
         <div
           className="button"
-          onClick={() => setUserInputContext("dans l'espace")}
+          onClick={() => setUserInputContext(t("context-sea-input"))}
         >
-          <Image className="button-image" src={space} alt="Espace" />
-          <p className="button-description">Espace</p>
+          <Image className="button-image" src={sea} alt={t("context-sea")} />
+          <p className="button-description">{t("context-sea")}</p>
+        </div>
+        <div
+          className="button"
+          onClick={() => setUserInputContext(t("context-space-input"))}
+        >
+          <Image className="button-image" src={space} alt={t("context-space")} />
+          <p className="button-description">{t("context-space")}</p>
         </div>
       </div>
     </div>
   );
 };
 
-/** const AreaComponent = ({ setUserInputArea }) => {
-  return (
-    <div className="page area">
-      <p className="label">Le moment de la journée est</p>
-      <div className="buttons">
-        <div
-          className="button"
-          onClick={() => setUserInputArea("lors d'une journée ensoleillée")}
-        >
-          <Image className="button-image" src={sun} alt="Journée" />
-        </div>
-        <div
-          className="button"
-          onClick={() => setUserInputArea("durant la nuit")}
-        >
-          <Image className="button-image" src={moon} alt="Nuit" />
-        </div>
-      </div>
-    </div>
-  );
-}; */
-
 const StoryTypeComponent = ({ setUserInputType }) => {
+  const { t, i18n } = useTranslation();
   return (
     <div className="page type">
-      <p className="label">Quel type d'histoire souhaites tu écrire&nbsp;? </p>
+      <p className="label">{t("type-label")}</p>
       <div className="buttons">
-        <div className="button" onClick={() => setUserInputType("d'amour pur")}>
-          <Image className="button-image" src={love} alt="Histoire d'amour" />
-          <p className="button-description">Amour</p>
+        <div className="button" onClick={() => setUserInputType(t("type-love-input"))}>
+          <Image className="button-image" src={love} alt={t("type-love")} />
+          <p className="button-description">{t("type-love")}</p>
         </div>
         <div
           className="button"
           onClick={() =>
-            setUserInputType("avec une bataille contre un méchant")
+            setUserInputType(t("type-battle-input"))
           }
         >
-          <Image className="button-image" src={war} alt="Une grande bataille" />
-          <p className="button-description">Bataille</p>
+          <Image className="button-image" src={war} alt={t("type-battle")} />
+          <p className="button-description">{t("type-battle")}</p>
         </div>
 
         <div
           className="button"
-          onClick={() => setUserInputType("d'une famille aimante")}
+          onClick={() => setUserInputType(t("type-family-input"))}
         >
           <Image
             className="button-image"
             src={parents}
-            alt="Histoire de famille"
+            alt={t("type-family")}
           />
-          <p className="button-description">Famille</p>
+          <p className="button-description">{t("type-family")}</p>
         </div>
         <div
           className="button"
-          onClick={() => setUserInputType("d'amitié profonde et sincère")}
+          onClick={() => setUserInputType(t("type-friend-input"))}
         >
           <Image
             className="button-image"
             src={friends}
-            alt="Histoire d'amitié"
+            alt={t("type-friend")}
           />
-          <p className="button-description">Amitié</p>
+          <p className="button-description">{t("type-friend")}</p>
         </div>
         <div
           className="button"
           onClick={() =>
-            setUserInputType("d'aventure et de découverte d'un monde")
+            setUserInputType(t("type-adventure-input"))
           }
         >
           <Image
             className="button-image"
             src={adventure}
-            alt="Histoire d'aventure"
+            alt={t("type-adventure")}
           />
-          <p className="button-description">Aventure</p>
+          <p className="button-description">{t("type-adventure")}</p>
         </div>
       </div>
     </div>
   );
 };
+
 
 function Home() {
   const [userInputAge, setUserInputAge] = useState(null);
@@ -324,7 +300,8 @@ function Home() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const gaEventTracker = useAnalyticsEventTracker("Create story");
+  const { t, i18n } = useTranslation();
+  const [languageIsEn, setLanguageEn] = useState(true);
 
   const callGenerateEndpoint = async () => {
     setIsGenerating(true);
@@ -342,6 +319,7 @@ function Home() {
         userInputType,
         userInputGender,
         userInputContext,
+        prompt,
       }),
     });
     const data = await response.json();
@@ -357,9 +335,6 @@ function Home() {
     setUserInputName(event.target.value);
   };
 
-  /** const setName = (event) => {
-    setNameIsFilled(true);
-    } */
 
   const resetValues = () => {
     setUserInputGender(null);
@@ -371,13 +346,37 @@ function Home() {
     setIsGenerated(false);
   };
 
+  const changeLanguageHandlerToEn = (e) => {
+    const languageValue = e.target.value;
+    i18n.changeLanguage(languageValue);
+    setLanguageEn(true);
+    resetValues();
+    
+  };
+
+  const changeLanguageHandlerToFr = (e) => {
+    const languageValue = e.target.value
+    i18n.changeLanguage(languageValue);
+    setLanguageEn(false);
+    resetValues();
+  };
+
+  const prompt = `${t("promptPart1")}\n
+  ${t("promptPart2")} ${userInputAge}.
+  \n
+  ${t("promptPart3")} ${userInputName}. ${t("promptPart4")}${userInputJob} ${t("promptPart5")}${userInputGender}.
+  ${t("promptPart6")}${userInputType}. ${t("promptPart7")}${userInputContext}.
+  ${t("promptPart8")}\n`;
+
+  console.log(prompt);
+
   return (
     // eslint-disable-next-line react/jsx-filename-extension
     <div className="root" onLoad={handleOpen}>
       <div className="container">
         <Head>
           {/* Google tag (gtag.js) */}
-          <title>iyagi - Generateur d&apos;histoires</title>
+          <title>{t("title")}</title>
           <link rel="icon" href="favicon.ico" />
           <meta property="og:image" content={logo} />
           <meta name="twitter:card" content={logo} />
@@ -386,9 +385,21 @@ function Home() {
           <div className="header-title">
             <Image src={logoNoBg}></Image>
           </div>
-          <div className="reload" onClick={resetValues}>
-            <p>Créer une nouvelle histoire</p>
+          <div className="header-right">
+            <div className="language-switch"> 
+            { languageIsEn ? (
+                    <button className="language-selector en" value="en" onClick={changeLanguageHandlerToFr}>🇬🇧</button>
+                  ) : (
+                    <button className="language-selector fr" value="fr" onClick={changeLanguageHandlerToEn}>🇫🇷</button>
+                  )}     
+      
+            </div>
+
+            <div className="reload" onClick={resetValues}>
+              <p>{t("header-newStory")}</p>
+            </div>
           </div>
+
         </div>
 
         <div className="modal">
@@ -403,15 +414,10 @@ function Home() {
                 <Image className="logo" src={logo} alt="Logo Iyagi" />
               </div>
               <div className="rules-right">
-                <h3>
-                  Génerez une histoire personnalisée avec votre enfant&nbsp;!
-                </h3>
-                <p>
-                  Cliquez sur les différents boutons pour définir tous les
-                  paramètres de votre histoire.
-                </p>
+                <h3>{t("rules-title") }</h3>
+                <p>{t("rules-description")}</p>
                 <button className="modalButton" onClick={handleClose}>
-                  Commencer
+                  {t("rules-button")}
                 </button>
               </div>
             </div>
@@ -429,32 +435,25 @@ function Home() {
         {!userInputContext && (
           <ContextComponent setUserInputContext={setUserInputContext} />
         )}
-        {/*!userInputArea && (
-          <AreaComponent setUserInputArea={setUserInputArea} />
-        )*/}
+        
         <div
           className="page section perso name"
           style={{ display: isGenerated ? "none" : "" }}
         >
-          <p className="label">Ton personnage s&apos;appelle </p>
+          <p className="label">{t("name-label")}</p>
           <textarea
             className="text-name"
-            placeholder="Choisi le nom de ton personnage."
+            placeholder={t("name-placeholder")}
             value={userInputName}
             onChange={onUserChangedName}
           />
-          {/* <button className='confirm-name' onClick={setName}>Confirmer le nom</button> */}
 
-          {/* Button for generation */}
           {isGenerating ? (
             <div className="loader-box">
               <div className="loader" />
             </div>
           ) : (
-            <div
-              className="generate-buttons"
-              onClick={() => gaEventTracker("Create story")}
-            >
+            <div className="generate-buttons">
               <a
                 className={isGenerating ? "loading" : "generate-button"}
                 onClick={callGenerateEndpoint}
@@ -463,7 +462,7 @@ function Home() {
                   {isGenerating ? (
                     <span className="loader" />
                   ) : (
-                    <p>Créer ton histoire</p>
+                    <p>{t("button-create")}</p>
                   )}
                 </div>
               </a>
@@ -479,7 +478,7 @@ function Home() {
             <div className="output">
               <div className="output-header-container">
                 <div className="output-header">
-                  <h3>Mon histoire</h3>
+                  <h3>{t("output-title")}</h3>
                 </div>
               </div>
               <div className="output-content">
@@ -489,7 +488,7 @@ function Home() {
           )}
 
           <div className="button restart" onClick={resetValues}>
-            <p>Créer une nouvelle histoire</p>
+            <p>{t("header-newStory")}</p>
           </div>
         </div>
       </div>
@@ -503,5 +502,7 @@ function Home() {
     </div>
   );
 }
+
+
 
 export default Home;

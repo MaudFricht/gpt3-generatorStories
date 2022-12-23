@@ -67,32 +67,32 @@ body {
 .header .reload {
   display: flex;
   align-items: center;
-  height: 50%;
-  width: fit-content;
+  height: 40px;
+  width: 35%;
+  justify-content: center;
   padding: 3px;
-  padding-right: 8px;
-  padding-left: 8px;
+  padding-right: 10px;
+  padding-left: 10px;
   background: white;
   font-family: inherit;
   font-weight: 900;
-  border: solid 3px #ffffff;
   border-radius: 0.8em;
   color: #eec5c8;
   font-size: 1rem;
   margin: 10px;
   cursor: pointer;
   text-align: center;
-  margin-right: 3vw;
-  text-align: center;
+  max-height: 40px;
+  transition: background-color .3s ease-in-out;
 }
 
 .reload p {
   color: #d6575f;
+  margin: 5px;
 }
 
 .reload:hover {
   background-color: rgb(247, 239, 234, 0.6);
-  transition: ease-in 0.2s;
 }
 
 .questions {
@@ -101,6 +101,40 @@ body {
   align-items: center;
   gap: 15px;
 }
+.header-right{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 3vw;
+  width: 70%;
+  justify-content: flex-end;
+}
+
+.language-switch {
+  border: solid;
+  border-radius: 0.8em;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  transition: background-color .3s ease-in-out;
+}
+
+.language-selector {
+  border: none;
+  font-size: 20px;
+  background-color: transparent;
+  text-align: center;
+  margin: auto;
+}
+
+.language-switch:hover {
+  background-color: #ffffff;
+ 
+}
+
+
 
 /** PAGES POSITIONS */
 
@@ -173,6 +207,8 @@ body {
   flex-wrap: wrap;
   flex-direction: row;
 }
+
+
 
 /* MODAL */
 
