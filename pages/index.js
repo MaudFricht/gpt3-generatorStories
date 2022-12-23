@@ -36,7 +36,6 @@ import friends from "../assets/friend.png";
 import love from "../assets/heart.png";
 import logo from "../assets/logo.png";
 import logoNoBg from "../assets/logoNoBg.svg";
-import logometa from "../assets/logo-meta.png";
 
 /* 
 import {
@@ -414,7 +413,7 @@ function Home() {
             content="Création d'histoires et contes pour enfants adaptés et personnalisés. 
           "
           />
-          <meta property="og:image" content="https://imgur.com/a/Fi7r6eS" />
+          <meta property="og:image" content="https://i.imgur.com/FNc43JG.png" />
 
           <meta property="twitter:card" content="summary_large_image" />
           <meta property="twitter:url" content="https://www.iyagi.xyz/" />
@@ -429,7 +428,7 @@ function Home() {
           />
           <meta
             property="twitter:image"
-            content="https://imgur.com/a/Fi7r6eS"
+            content="https://i.imgur.com/FNc43JG.png"
           ></meta>
         </Head>
         <div className="header">
